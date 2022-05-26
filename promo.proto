@@ -27,11 +27,12 @@ message ListPromoRequest {
 }
 
 message Promo {
-    string code = 1;
-    int32 percentage = 2;
-    int32 maxCut = 3;
-    int32 maxUse = 4;
-    int32 totalUse = 5;
+    int32 id = 1;
+    string code = 2;
+    int32 percentage = 3;
+    int32 maxCut = 4;
+    int32 maxUse = 5;
+    int32 totalUse = 6;
 }
 
 message ListPromoResponse {
