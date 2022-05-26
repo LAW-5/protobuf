@@ -6,7 +6,7 @@ service PromoService {
     rpc CreatePromo(CreatePromoRequest) returns (CreatePromoResponse) {}
     rpc ListPromo(ListPromoRequest) returns (ListPromoResponse) {}
     rpc UsePromo(UsePromoRequest) returns (UsePromoResponse) {}
-    rpc DeletPromo(DeletePromoRequest) returns (DeletePromoResponse) {}
+    rpc DeletePromo(DeletePromoRequest) returns (DeletePromoResponse) {}
 }
 
 message CreatePromoRequest {
