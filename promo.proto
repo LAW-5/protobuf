@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package promo;
+
+service PromoService {
+    rpc CreatePromo(CreatePromoRequest) returns (CreatePromoResponse) {}
+    rpc ListPromo(ListPromoRequest) returns (ListPromoResponse) {}
+    rpc UsePromo(UsePromoRequest) returns (UsePromoResponse) {}
+    rpc DeletPromo(DeletePromoRequest) returns (DeletePromoResponse) {}
+}
+
+message CreatePromoRequest {
+    int32 merchantId = 1;
+    string code = 2;
+    int32 percentage = 3;
+    int32 maxCut = 4;
+    int32 maxUse = 5;
+}
+
+message CreatePromoResponse {
+    int32 status = 1;
+    repeated string error = 2;
+}
+
+message ListPromoRequest {
+    int32 merchantId = 1;
+}
+
+message Promo {
+    string code = 1;
+    int32 percentage = 2;
+    int32 maxCut = 3;
+    int32 maxUse = 4;
+    int32 totalUse = 5;
+}
+
+message ListPromoResponse {
+    repeated Promo data = 1;
+    int32 status = 2;
+    repeated string error = 3;
+}
+
+message UsePromoRequest {
+    int32 id = 1;
+}
+
+message UsePromoResponse {
+    int32 status = 2;
+    repeated string error = 3;
+}
+
+message DeletePromoRequest {
+    int32 id = 1;
+}
+
+message DeletePromoResponse {
+    int32 status = 2;
+    repeated string error = 3;
+}

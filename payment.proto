@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package payment;
+
+service PaymentService {
+    rpc GetBalanceDetail(BalanceDetailRequest) returns (BalanceDetailResponse) {}
+    rpc TopUp(TopUpRequest) returns (TopUpResponse) {}
+    rpc DecreaseBalance(DecreaseBalanceRequest) returns (DecreaseBalanceResponse) {}
+}
+
+message BalanceDetailRequest {
+    int32 id = 1;
+}
+
+message BalanceDetailResponse {
+    int32 status = 1;
+    repeated string error = 2;
+    int32 balance = 3;
+}
+
+message TopUpRequest {
+    int32 id = 1;
+    int32 amount = 2;
+}
+
+message TopUpResponse {
+    int32 status = 1;
+    repeated string error = 2;
+}
+
+message DecreaseBalanceRequest {
+    int32 id = 1;
+    int32 amount = 2;
+}
+
+message DecreaseBalanceResponse {
+    int32 status = 1;
+    repeated string error = 2;
+}

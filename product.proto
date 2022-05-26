@@ -36,6 +36,7 @@ message ProductDetailResponse {
     int32 price = 4;
     string description = 5;
     repeated string error = 6;
+    int32 merhcantId = 7;
 }
 
 message ListMerchantProductRequest {
@@ -47,6 +48,7 @@ message CreateProductRequest {
     int32 stock = 2;
     int32 price = 3;
     string description = 4;
+    int32 merchantId  = 5;
 }
 
 message CreateProductResponse {
@@ -55,10 +57,11 @@ message CreateProductResponse {
 }
 
 message EditProductRequest {
-    string name = 1;
-    int32 stock = 2;
-    int32 price = 3;
-    string description = 4;
+    int32 id = 1;
+    string name = 2;
+    int32 stock = 3;
+    int32 price = 4;
+    string description = 5;
 }
 
 message EditProductResponse {
