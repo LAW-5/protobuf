@@ -1,0 +1,84 @@
+syntax = "proto3";
+
+package product;
+
+service ProductService {
+    rpc ListProduct(Empty) returns (ListProductResponse) {}
+    rpc ProductDetail(ProductDetailRequest) returns (ProductDetailResponse) {}
+    rpc ListMerchantProduct(ListMerchantProductRequest) returns (ListProductResponse) {}
+    rpc CreateProduct(CreateProductRequest) returns (CreateProductResponse) {}
+    rpc EditProduct(EditProductRequest) returns (EditProductResponse) {}
+    rpc DeleteProduct(DeleteProductRequest) returns (DeleteProductResponse) {}
+    rpc SearchProduct(SearchProductRequest) returns (SearchProductResponse) {}
+}
+
+message Empty {}
+
+message Product {
+    int32 id = 1;
+    string name = 2;
+    int32 stock = 3;
+    int32 price = 4;
+}
+
+message ListProductResponse {
+    repeated Product data = 1;
+}
+
+message ProductDetailRequest {
+    int32 id = 1;
+}
+
+message ProductDetailResponse {
+    int32 id = 1;
+    string name = 2;
+    int32 stock = 3;
+    int32 price = 4;
+    string description = 5;
+    repeated string error = 6;
+}
+
+message ListMerchantProductRequest {
+    int32 id = 1;
+}
+
+message CreateProductRequest {
+    string name = 1;
+    int32 stock = 2;
+    int32 price = 3;
+    string description = 4;
+}
+
+message CreateProductResponse {
+    int32 status = 1;
+    repeated string error = 2;
+}
+
+message EditProductRequest {
+    string name = 1;
+    int32 stock = 2;
+    int32 price = 3;
+    string description = 4;
+}
+
+message EditProductResponse {
+    int32 status = 1;
+    repeated string error = 2;
+}
+
+message DeleteProductRequest {
+    int32 id = 1;
+}
+
+message DeleteProductResponse {
+    int32 status = 1;
+    repeated string error = 2;
+}
+
+message SearchProductRequest {
+    string name = 1;
+}
+
+message SearchProductResponse {
+    repeated Product data = 1;
+}
