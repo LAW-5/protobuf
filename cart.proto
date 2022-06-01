@@ -33,7 +33,7 @@ message Cart {
 }
 
 message ListCartResponse {
-    map<int32, Cart> data = 1;
+    map<int32, repeated Cart> data = 1;
     int32 status = 2;
     repeated string error = 3;
 }
