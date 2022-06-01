@@ -32,8 +32,12 @@ message Cart {
     int32 quantity = 4;
 }
 
+message Carts {
+    repeated Cart cart = 1;
+}
+
 message ListCartResponse {
-    map<int32, repeated Cart> data = 1;
+    map<int32, Carts> data = 1;
     int32 status = 2;
     repeated string error = 3;
 }
