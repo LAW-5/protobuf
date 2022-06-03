@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package cart;
+
+service CartService {
+    rpc CreateCart(CreateCartRequest) returns (CreateCartResponse) {}
+    rpc ListCart(ListCartRequest) returns (ListCartResponse) {}
+    rpc EditCart(EditCartRequest) returns (EditCartResponse) {}
+    rpc DeleteCart(DeleteCartRequest) returns (DeleteCartResponse) {}
+}
+
+message CreateCartRequest {
+    int32 userId = 1;
+    int32 merchantId = 2;
+    int32 productId = 3;
+    int32 quantity = 4;
+}
+
+message CreateCartResponse {
+    int32 status = 1;
+    repeated string error = 2;
+}
+
+message ListCartRequest {
+    int32 userId = 1;
+}
+
+message Cart {
+    int32 id = 1;
+    int32 merchantId = 2;
+    int32 productId = 3;
+    int32 quantity = 4;
+}
+
+message Carts {
+    repeated Cart cart = 1;
+}
+
+message ListCartResponse {
+    map<int32, Carts> data = 1;
+    int32 status = 2;
+    repeated string error = 3;
+}
+
+message EditCartRequest {
+    int32 id = 1;
+    int32 quantity = 2;
+}
+
+message EditCartResponse {
+    int32 status = 1;
+    repeated string error = 2;
+}
+
+message DeleteCartRequest {
+    int32 id = 1;
+}
+
+message DeleteCartResponse {
+    int32 status = 1;
+    repeated string error = 2;
+}
