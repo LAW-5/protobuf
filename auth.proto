@@ -29,6 +29,8 @@ message LoginResponse {
     int32 status = 1;
     repeated string error = 2;
     string token = 3;
+    string email = 4;
+    string role = 5;
 }
 
 message ValidateRequest {
