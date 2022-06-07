@@ -16,6 +16,7 @@ message BalanceDetailResponse {
     int32 status = 1;
     repeated string error = 2;
     int32 balance = 3;
+    int32 id = 4;
 }
 
 message TopUpRequest {
