@@ -14,9 +14,10 @@ message CreateOrderRequest {
     int32 merchantId = 2;
     int32 productId = 3;
     int32 quantity = 4;
-    string address = 5;
-    int32 promoId = 6;
-    string orderStatus = 7;
+    string name = 5;
+    string address = 6;
+    int32 promoId = 7;
+    string orderStatus = 8;
 }
 
 message CreateOrderResponse {
@@ -37,7 +38,8 @@ message Order {
     string orderStatus = 2;
     int32 productId = 3;
     int32 quantity = 4;
-    string address = 5;
+    string name = 5;
+    string address = 6;
 }
 
 message ListOrderResponse {
