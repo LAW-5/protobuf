@@ -15,7 +15,7 @@ message CreateOrderRequest {
     int32 productId = 3;
     int32 quantity = 4;
     string address = 5;
-    repeated int32 promoId = 6;
+    int32 promoId = 6;
     string orderStatus = 7;
 }
 
