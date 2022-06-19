@@ -12,11 +12,11 @@ service OrderService {
 message CreateOrderRequest {
     int32 userId = 1;
     int32 merchantId = 2;
-    int32 productId = 3;
-    int32 quantity = 4;
-    string name = 5;
-    string address = 6;
-    int32 promoId = 7;
+    repeated int32 productId = 3;
+    repeated int32 quantity = 4;
+    int32 totalPrice = 5;
+    string name = 6;
+    string address = 7;
     string orderStatus = 8;
 }
 
@@ -36,10 +36,11 @@ message ListMerchantOrderRequest {
 message Order {
     int32 id = 1;
     string orderStatus = 2;
-    int32 productId = 3;
-    int32 quantity = 4;
-    string name = 5;
-    string address = 6;
+    repeated int32 productId = 3;
+    repeated int32 quantity = 4;
+    int32 totalPrice = 5;
+    string name = 6;
+    string address = 7;
 }
 
 message ListOrderResponse {
